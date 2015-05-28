@@ -44,7 +44,17 @@ describe 'Game of life' do
   context 'Game' do
     subject { Game.new }
     it 'should create a new game object' do
-      expect(subject.nil?).to eql(false)
+      expect(subject.is_a?(Game)).to eql(true)
+    end
+
+    it 'should respond to proper method' do
+      expect(subject.respond_to?(:world))
+      expect(subject.respond_to?(:seeds))
+    end
+
+    it 'should initialize properly' do
+      expect(subject.world.is_a?(World)).to eql(true)
+      expect(subject.seeds.is_a?(Array)).to eql(true)
     end
   end
 
