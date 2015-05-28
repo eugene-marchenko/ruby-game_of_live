@@ -1,4 +1,5 @@
 require_relative '../lib/game_of_life'
+require_relative '../lib/game'
 require 'rspec'
 
 describe 'Game of life' do
@@ -40,12 +41,20 @@ describe 'Game of life' do
     end
   end
 
-  context 'Rules' do
-    context 'Rule 1: Any live cell with fewer that two
-                neigs dies, as if caused by under-population' do
-      
+  context 'Game' do
+    subject { Game.new }
+    it 'should create a new game object' do
+      expect(subject.nil?).to eql(false)
     end
   end
 
+  context 'Rules' do
+    let(:game) { Game.new }
+    context 'Rule 1: Any live cell with fewer that two
+                neigs dies, as if caused by under-population' do
+      it 'should kill a live cell with 1 live neighbour' do
+      end
+    end
+  end
 end
 
