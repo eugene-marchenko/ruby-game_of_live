@@ -13,5 +13,16 @@ class World
     end
   end
 
+  def live_neighbours_around_cell(cell)
+    live_neighbours = []
+    # North cells
+    if cell.y > 0
+      candidate = self.cell_grid[cell.y - 1][cell.x]
+      live_neighbours << candidate if candidate.alive?
+    end
+
+    live_neighbours
+  end
+
 
 end

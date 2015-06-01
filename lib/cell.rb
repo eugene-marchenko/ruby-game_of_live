@@ -6,4 +6,12 @@ class Cell
     @y = y
   end
 
+  def alive?
+    alive
+  end
+
+  def dead?; !alive; end
+
+  def tick!; tick!; end
+
 end
