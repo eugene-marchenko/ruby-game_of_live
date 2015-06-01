@@ -12,6 +12,6 @@ class Cell
 
   def dead?; !alive; end
 
-  def tick!; tick!; end
+  def tick!; return 0; end
 
 end
